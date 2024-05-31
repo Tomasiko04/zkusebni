@@ -64,7 +64,9 @@ a pomocí
 
 určit název herního okna
 
+
 Nastavení hry
+
     řádky v kódu 8-12       
         fps = 60
         clock = pygame.time.Clock()

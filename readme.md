@@ -213,3 +213,13 @@ Popis class a jejich atributů a metod
                 time_text1 = self.stone_font.render(f"Čas: {minutes} min {seconds} s", True, dark_yellow)
                 time_text_rect1=time_text1.get_rect()
                 time_text_rect1.center=(width // 2 , 85)
+
+                3. vkreslení do obrazovky (řádky v kódu: 110 až 117)
+                screen.blit(catch_text, catch_text_rect)
+                screen.blit(catch_text1, catch_text_rect1)
+                screen.blit(player_text_1, player_text_1_rect)
+                screen.blit(player_text_2, player_text_2_rect)
+                screen.blit(lives_text_1, lives_text_rect_1)
+                screen.blit(lives_text_2, lives_text_rect_2)
+                #screen.blit(time_text, time_text_rect)     # Pouze sekundy
+                screen.blit(time_text1, time_text_rect1)

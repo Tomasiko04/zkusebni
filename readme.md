@@ -52,6 +52,7 @@ určit si barvy a velikost rozlišení obrazovky
 
 
 a pomocí
+
     řádek v kódu 13
         screen = pygame.display.set_mode((width, height))
         
@@ -59,6 +60,7 @@ si určit velikost rozlišení obrazovky
 
 
 a pomocí 
+
     řádek v kódu 14
         pygame.display.set_caption("Starwars")
 
@@ -73,3 +75,10 @@ Nastavení hry
 
 fps=počet snímků za sekundu
 pygame.time.Clock() je konstruktor třídy Clock v knihovně Pygame, který vytváří nový objekt Clock je používán k regulaci rychlosti herní smyčky.
+
+
+
+
+Classy (třídy)
+
+    Classa neboli třída je laicky řečeno jakýsi druh datové struktury, která nám organizuje kód do určitých logických celků. Tyto třídy mohou například reprezentovat herní postavy, překážky, efekty atd. Každá třída může mít atributy (proměnné) a metody (funkce), které definují chování a vlastnosti této třídy.

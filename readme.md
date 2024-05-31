@@ -1,7 +1,7 @@
 Starwars
 
 
-Popis hry
+>Popis hry
 
 Tato hra je inspirována sci-fi filmy Star Wars. Jedná se o soubojovou arkádovou hru pro dva hráče, ve které se snažíte zničit nepřátelskou vesmírnou loď a přežít co nejdéle. Každý z hráčů má 5 životů, o které může snadno přijít - buď zásahem střelou, kterou proti němu vyšle protivník, nebo pokud se střetne s nepřátelským meteoroidem. Naopak každá z vesmírných lodí je imunní vůči svým meteoroidům, za které se může schovat při útoku nepřítele.
 
@@ -85,7 +85,7 @@ pygame.time.Clock() je konstruktor třídy Clock v knihovně Pygame, který vytv
 
 Popis class a jejich atributů a metod
 
-> Game -> představuje hlavní herní logiku a funkce pro hru "Starwars" 
+>>> Game -> představuje hlavní herní logiku a funkce pro hru "Starwars" 
 
 1. Inicializujeme pomocí __init__ () naši class jedná se o tzv. konstruktor, který nastavuje základní atributy (proměnné) dané classy:
 
@@ -101,3 +101,13 @@ Popis class a jejich atributů a metod
 
         self.last_stone_time = 0                        #Poslední čas vytvoření meteoritu.
         self.stone_cooldown = 10                        #  self.stone_cooldown ŘÍKÁ ZA JAK DLOUHO SE VYGENERUJE DALŠÍ SÉRIE METEORITŮ (časové intervali mezi generování meteriotů)
+
+     1.2 Hudba v pozadí:
+		Zde se při zavolání classy před hlavní herní smyčkou načte hudba (řádek: 37) a začne se přehrávat hudba (řádek: 38) poté, aby hudba byla jen v pozadí je pomocí řádku 39 ztlumena 
+        *hedba je neoficiálně stažena z youtube pomocí webové stránky: https://en3.onlinevideoconverter.pro/297wG/youtube-converter-mp3 
+                
+                (řádky v kódu: 37 až 39)             
+             #Hudba v pozadí
+            pygame.mixer.music.load("media/bg_starwars.mp3")
+            pygame.mixer.music.play(-1, 0.0)
+            pygame.mixer.music.set_volume(0.05)

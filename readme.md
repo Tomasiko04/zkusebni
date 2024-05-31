@@ -79,7 +79,7 @@ pygame.time.Clock() je konstruktor třídy Clock v knihovně Pygame, který vytv
 
 
 
-Classy (třídy)
+>>Classy (třídy)
     Classa neboli třída je laicky řečeno jakýsi druh datové struktury, která nám organizuje kód do určitých logických celků. Tyto třídy mohou například reprezentovat herní postavy, překážky, efekty atd. Každá třída může mít atributy (proměnné) a metody (funkce), které definují chování a vlastnosti této třídy.
     V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedStone)
 
@@ -92,7 +92,7 @@ Popis class a jejich atributů a metod
     1.1 Herní proměnné 
 	    	(řádky v kódu: 27 až 34)
 
-            
+
             self.round_time = 0                             #Čas trvání aktuálního kola hry.
         self.slow_down_cycle = 0                        #Počítadlo cyklů pro zpomalení aktualizace času kola.        
         self.our_player_1 = our_player1             #Odkazy na objekty hráčů.

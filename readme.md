@@ -146,3 +146,20 @@ Popis class a jejich atributů a metod
             fonts = pygame.font.get_fonts()
             for x in fonts:
                 print(x)
+
+                Vlastní fonty
+                (řádky v kódu: 54 až 57 načtení vlastní fontu z internetu odkaz: )
+            
+            self.custom_font_small=pygame.font.Font("fonts/DeathStar-VmWB.ttf",10)
+            self.custom_font_medium=pygame.font.Font("fonts/DeathStar-VmWB.ttf",25)
+            self.custom_font_large=pygame.font.Font("fonts/DeathStar-VmWB.ttf",40)
+
+    1.5 Aktualizace hry 
+        Tato aktualizace má za úkol, aby při zavolání v této funkce se proměnná round_time zvětšila o 1. Je to důležité jelikož na základě round_time pracuje časomíra, která je zobrazena pod názvem hry, když na sebe mohou vesmírné lodě střílet 
+                
+                (řádky v kódu: 61 až 65)
+            def update(self):
+                self.slow_down_cycle += 1
+                if self.slow_down_cycle == fps:
+                    self.round_time += 1
+                    self.slow_down_cycle = 0

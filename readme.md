@@ -91,6 +91,8 @@ Popis class a jejich atributů a metod
 
     1.1 Herní proměnné 
 	    	(řádky v kódu: 27 až 34)
+
+            
             self.round_time = 0                             #Čas trvání aktuálního kola hry.
         self.slow_down_cycle = 0                        #Počítadlo cyklů pro zpomalení aktualizace času kola.        
         self.our_player_1 = our_player1             #Odkazy na objekty hráčů.

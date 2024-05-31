@@ -14,13 +14,13 @@ Ovládání hry:
 
 Hráč 1:
 
-Pohyb: Šipky (nahoru, dolů, vlevo, vpravo)
+    Pohyb: Šipky (nahoru, dolů, vlevo, vpravo)
 
-Střelba: Mezerník (podle délky stisku klávesy se vystřelí určitý počet střel min.1 max.3)
+    Střelba: Mezerník (podle délky stisku klávesy se vystřelí určitý počet střel min.1 max.3)
 
 
 Hráč 2:
 
-Pohyb: W, A, S, D
+    Pohyb: W, A, S, D
 
-Střelba: Klávesa "C" (podle délky stisku klávesy se vystřelí určitý počet střel min.1 max.3)
+    Střelba: Klávesa "C" (podle délky stisku klávesy se vystřelí určitý počet střel min.1 max.3)

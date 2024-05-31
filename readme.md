@@ -132,3 +132,16 @@ Popis class a jejich atributů a metod
         
         
     *pozn. Kdyby jste se divili proč je šířka vrchního pozdí 1250 a dolního jen 1200 je to kvůli tomu aby pozadí výše bylo správně vzhledově umístěno a postavě napravo nebyla u “seknuta hlava“ jinak by zde šla šířka pozadí nastavit pod proměnnou width
+
+    1.4 Fonty 
+        V této hře jsem vyzkoušel i dva způsoby vkládání textů. Konkrétně se jedná o tzv. systémové a vlastní fonty
+        
+            Systémové fonty:
+            (řádek v kódu: 54 načtení systémového fontu)
+            self.stone_font = pygame.font.SysFont("ebrima", 15)
+            Pokud byste si chtěli vybrat svůj systémový font, napište do nového dokumentu např. ve Visual Studio tento kód níže a v terminálu se vám zobrazí
+                
+                import pygame
+                fonts = pygame.font.get_fonts()
+                for x in fonts:
+                    print(x)

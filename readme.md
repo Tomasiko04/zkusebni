@@ -130,4 +130,5 @@ Popis class a jejich atributů a metod
             self.background_space_img_rect = self.background_space_img.get_rect()
             self.background_space_img_rect.topleft = (0,500)
         
+        
         *pozn. Kdyby jste se divili proč je šířka vrchního pozdí 1250 a dolního jen 1200 je to kvůli tomu aby pozadí výše bylo správně vzhledově umístěno a postavě napravo nebyla u “seknuta hlava“ jinak by zde šla šířka pozadí nastavit pod proměnnou width

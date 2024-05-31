@@ -88,3 +88,14 @@ Popis class a jejich atributů a metod
 > Game -> představuje hlavní herní logiku a funkce pro hru "Starwars" 
 
 1. Inicializujeme pomocí __init__ () naši class jedná se o tzv. konstruktor, který nastavuje základní atributy (proměnné) dané classy:
+
+    1.1 Herní proměnné 
+	    	(řádky v kódu: 27 až 34)
+            self.round_time = 0                             #Čas trvání aktuálního kola hry.
+        self.slow_down_cycle = 0                        #Počítadlo cyklů pro zpomalení aktualizace času kola.        
+        self.our_player_1 = our_player1             #Odkazy na objekty hráčů.
+        self.our_player_2 = our_player2             #Odkazy na objekty hráčů.
+        self.group_of_stones = group_of_stones          #Skupina meteoritů.  
+
+        self.last_stone_time = 0                        #Poslední čas vytvoření meteoritu.
+        self.stone_cooldown = 10                        #  self.stone_cooldown ŘÍKÁ ZA JAK DLOUHO SE VYGENERUJE DALŠÍ SÉRIE METEORITŮ (časové intervali mezi generování meteriotů)

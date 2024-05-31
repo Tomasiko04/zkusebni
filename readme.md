@@ -163,3 +163,53 @@ Popis class a jejich atributů a metod
                 if self.slow_down_cycle == fps:
                     self.round_time += 1
                     self.slow_down_cycle = 0
+    
+    1.6 Vykreslení
+        Metoda (funkce) draw vykresluje herní prvky na obrazovku 
+        1. načtu si barvu > 2. Nastavím si texty > 3. vkreslení do obrazovky 
+
+                1. načtu si barvu (řádky v kódu: 67 až 68)
+            
+            def draw(self):
+                dark_yellow = pygame.Color("#938f0c") 
+
+
+                2. Nastavím si texty (řádky v kódu: 71 až 107) 
+                        #Nastevení textu
+                catch_text = self.custom_font_large.render("Star", True, dark_yellow)
+                catch_text_rect = catch_text.get_rect()
+                catch_text_rect.centerx = width // 2
+                catch_text_rect.top = 5
+                catch_text1 = self.custom_font_large.render("wars", True, dark_yellow)
+                catch_text_rect1 = catch_text1.get_rect()
+                catch_text_rect1.centerx = width // 2
+                catch_text_rect1.top = 40
+
+                player_text_1 = self.custom_font_medium.render("PLAYER  1", True, dark_yellow)
+                player_text_1_rect = player_text_1.get_rect()
+                player_text_1_rect.topleft = (10, 4)
+
+                player_text_2 = self.custom_font_medium.render("PLAYER  2", True, dark_yellow)
+                player_text_2_rect = player_text_2.get_rect()
+                player_text_2_rect.topright = (width - 5, 4)
+
+                lives_text_1 = self.custom_font_medium.render(f"Zivoty: {self.our_player_1.lives}", True, dark_yellow)
+                lives_text_rect_1 = lives_text_1.get_rect()
+                lives_text_rect_1.topleft = (10, 30)
+
+                lives_text_2 = self.custom_font_medium.render(f"Zivoty: {self.our_player_2.lives}", True, dark_yellow)
+                lives_text_rect_2 = lives_text_2.get_rect()
+                lives_text_rect_2.topright = (width - 5, 30)
+
+                    #POUZE sekundy
+                #time_text = self.stone_font.render(f"Cas hry: {self.round_time}s", True, dark_yellow)
+                #time_text_rect = time_text.get_rect()
+                #time_text_rect.centerx = width//2
+                #time_text_rect.top = 75
+
+                    #Sedkundy a minuty
+                minutes = int(self.round_time // 60)
+                seconds = int(self.round_time % 60)
+                time_text1 = self.stone_font.render(f"Čas: {minutes} min {seconds} s", True, dark_yellow)
+                time_text_rect1=time_text1.get_rect()
+                time_text_rect1.center=(width // 2 , 85)

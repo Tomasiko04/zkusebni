@@ -90,9 +90,9 @@ Popis class a jejich atributů a metod
 1. Inicializujeme pomocí __init__ () naši class jedná se o tzv. konstruktor, který nastavuje základní atributy (proměnné) dané classy:
 
     1.1 Herní proměnné 
-	    	(řádky v kódu: 27 až 34)
-
-
+	    	
+            
+            (řádky v kódu: 27 až 34)
             self.round_time = 0                             #Čas trvání aktuálního kola hry.
         self.slow_down_cycle = 0                        #Počítadlo cyklů pro zpomalení aktualizace času kola.        
         self.our_player_1 = our_player1             #Odkazy na objekty hráčů.
@@ -106,7 +106,8 @@ Popis class a jejich atributů a metod
 		Zde se při zavolání classy před hlavní herní smyčkou načte hudba (řádek: 37) a začne se přehrávat hudba (řádek: 38) poté, aby hudba byla jen v pozadí je pomocí řádku 39 ztlumena 
         *hedba je neoficiálně stažena z youtube pomocí webové stránky: https://en3.onlinevideoconverter.pro/297wG/youtube-converter-mp3 
                 
-                (řádky v kódu: 37 až 39)             
+
+               (řádky v kódu: 37 až 39)             
              #Hudba v pozadí
             pygame.mixer.music.load("media/bg_starwars.mp3")
             pygame.mixer.music.play(-1, 0.0)

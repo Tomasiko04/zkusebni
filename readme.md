@@ -112,3 +112,21 @@ Popis class a jejich atributů a metod
             pygame.mixer.music.load("media/bg_starwars.mp3")
             pygame.mixer.music.play(-1, 0.0)
             pygame.mixer.music.set_volume(0.05)
+
+    1.3 Obrázky v pozadí: 
+        Podobně jako u bodu výše se soubor načte ze složky, kde byl uložen - > poté dané pozadí zmenšíme jak potřebujeme (zde podle velikosti šířky céle obrazovky hry a výšku volíme podle velikosti herního pole kde se nachází kosmické lodě) -> řádek 44 je laicky řečeno  nastaví proměnnou self.background_image_rect na obdélník (rect), který obklopuje celý obrázek self.background_image." -> řádek 45 jedná se o umístění obrázku (v tomto případu je po provedení tohoto řádku kódu levý horní roh obrázku self.background_image umístěn na pozici x=0 a y=100 na obrazovce.)
+        *Jinými slovy, tento obdélník bude obsahovat informace o tom, kde se obrázek nachází a jak je velký. Tyto informace jsou užitečné pro umístění obrázku na obrazovku nebo pro detekci kolizí. 
+
+                
+                (řádky v kódu: 43 až 46 hlavní pozadí na němž se pohybují vesmírné lodě)
+             # Obrázek v pozadí
+            self.background_image = pygame.image.load("img/bg_starwars3.webp")
+            self.background_image = pygame.transform.scale(self.background_image, (1250, 400))
+            self.background_image_rect = self.background_image.get_rect()
+            self.background_image_rect.topleft = (0, 100)
+
+                (řádky v kódu: 48 až 51 pozadí pod hlavním pozadím)
+            self.background_space_img = pygame.image.load("img/bg_space.jpg")
+            self.background_space_img = pygame.transform.scale(self.background_space_img, (1200, 100))
+            self.background_space_img_rect = self.background_space_img.get_rect()
+            self.background_space_img_rect.topleft = (0,500)

@@ -43,6 +43,7 @@ Poté je potřeba inicializovat celou hru pomocí
         
 určit si barvy a velikost rozlišení obrazovky
 
+    řádky v kódu 8-12
         # Barvy
         tyrkys = "#00fff8"
         # Obrazovka
@@ -51,14 +52,22 @@ určit si barvy a velikost rozlišení obrazovky
 
 
 a pomocí
-
+    řádek v kódu 13
         screen = pygame.display.set_mode((width, height))
         
 si určit velikost rozlišení obrazovky
 
 
 a pomocí 
-
+    řádek v kódu 14
         pygame.display.set_caption("Starwars")
-        
+
 určit název herního okna
+
+Nastavení hry
+    řádky v kódu 8-12       
+        fps = 60
+        clock = pygame.time.Clock()
+
+fps=počet snímků za sekundu
+pygame.time.Clock() je konstruktor třídy Clock v knihovně Pygame, který vytváří nový objekt Clock je používán k regulaci rychlosti herní smyčky.

@@ -136,12 +136,13 @@ Popis class a jejich atributů a metod
     1.4 Fonty 
         V této hře jsem vyzkoušel i dva způsoby vkládání textů. Konkrétně se jedná o tzv. systémové a vlastní fonty
         
-            Systémové fonty:
-            (řádek v kódu: 54 načtení systémového fontu)
+                Systémové fonty:
+                (řádek v kódu: 54 načtení systémového fontu)
             self.stone_font = pygame.font.SysFont("ebrima", 15)
-            Pokud byste si chtěli vybrat svůj systémový font, napište do nového dokumentu např. ve Visual Studio tento kód níže a v terminálu se vám zobrazí
+            
+                Pokud byste si chtěli vybrat svůj systémový font, napište do nového dokumentu např. ve Visual Studio tento kód níže a v terminálu se vám zobrazí
                 
-                import pygame
-                fonts = pygame.font.get_fonts()
-                for x in fonts:
-                    print(x)
+            import pygame
+            fonts = pygame.font.get_fonts()
+            for x in fonts:
+                print(x)

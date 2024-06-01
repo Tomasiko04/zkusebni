@@ -235,7 +235,7 @@ V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedSt
     
 **2.	Kameny (řádek v kódu125 až 141)**
 Metoda kameny +generuje nové meteority v pravidelných intervalech:
-Ze začátku mám zakomentované testování poté pokud proměnná do které se zaznamenává čas (round_time) je při odečtu minulého zaznamenaného času **(řádek v kódu 33: atribut self.last_stone_time)* větší nebo rovna **(řádek v kódu 34 atribut self.stone_cooldown) * -> pomocí smyčky for nastaví náhodný počet červených a bílích meteroidů a zavoláme si potřebnou classu do které se zaznamená **x(nastaveno), y(náhoda)* souřadnice a také se načte příslušný obrázek nakonec se určí typ meteroidu (to jsem si uvedl navíc nemuselo by to v kódu být jako ten typ). Dále jak s tím pracuje daná classa  si povíme níže (RedStone, WhiteStone)
+Ze začátku mám zakomentované testování poté pokud proměnná do které se zaznamenává čas (round_time) je při odečtu minulého zaznamenaného času *(řádek v kódu 33: atribut self.last_stone_time)* větší nebo rovna *(řádek v kódu 34 atribut self.stone_cooldown) * -> pomocí smyčky for nastaví náhodný počet červených a bílích meteroidů a zavoláme si potřebnou classu do které se zaznamená *x(nastaveno), y(náhoda)* souřadnice a také se načte příslušný obrázek nakonec se určí typ meteroidu (to jsem si uvedl navíc nemuselo by to v kódu být jako ten typ). Dále jak s tím pracuje daná classa  si povíme níže (RedStone, WhiteStone)
 Potom se ještě self_last_stone_time se aktualizuje na self.round_time
 
            

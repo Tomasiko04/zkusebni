@@ -410,21 +410,21 @@ self.image = pygame.Surface((15, 5)) je velikost střely a poté pomocí podmín
 >Aktualizace pozice:
 Přidává hodnotu speed k souřadnici x obdélníku (rect), což způsobuje pohyb střely ve směru její rychlosti.
 
-            řádek v kódu 321
+    (řádek v kódu 321)
             self.rect.x += self.speed
 
 >Odstranění střely, pokud opustí obrazovku:
 Pokud střela opustí obrazovku (její pravý okraj je menší než 0 nebo její levý okraj je větší než šířka obrazovky width), zavolá se metoda kill(), která odstraní střelu ze všech skupin spriteů, ve kterých je.
 
-            řádek v kódu 322 a 323 
+    (řádek v kódu 322 a 323) 
             if self.rect.right < 0 or self.rect.left > width:
                 self.kill()
 
->>>RedStone (WhiteStone tato třída je téměř stejná až na to že se x souřadnice přičítá)
+>**RedStone (WhiteStone tato třída je téměř stejná až na to že se x souřadnice přičítá)**
 
-Tato classa představuje ve hře červený kámen/meteoroid, který se pohybuje z levé strany na levou stranu hracího pole. U classy WhiteStone se pohybuje bílý kámen/meteoroid pohybující se pravé strany na levou což je jediný rozdíl co tyto classy odlišuje (u classy RedStone se odečítá x a u classy WhiteStone se x odečítá) Obě dvě tyto classy dědí od pygame.sprite.Sprite stejně jako například Player_1.
+Tato classa představuje ve hře červený kámen/meteoroid, který se pohybuje z levé strany na levou stranu hracího pole. U classy WhiteStone se pohybuje bílý kámen/meteoroid pohybující se pravé strany na levou **což je jediný rozdíl co tyto classy odlišuje** (u classy RedStone se odečítá x a u classy WhiteStone se x odečítá) Obě dvě tyto classy dědí od pygame.sprite.Sprite stejně jako například Player_1.
 
-        řádky v kódu 325 až 335
+    (řádky v kódu:RedStone 325 až 335; WhiteStone 337 až 347)
 
     class RedStone(pygame.sprite.Sprite):
         def __init__(self, x, y, image, stone_type):
@@ -445,45 +445,40 @@ Tato classa představuje ve hře červený kámen/meteoroid, který se pohybuje 
 
 
 >>x, y: Počáteční souřadnice středu kamene.
+
 >>image: Obrázek kamene, který bude zobrazen.
+
 >>stone_type: Typ kamene, který může ovlivňovat jeho vlastnosti nebo chování.
 
 >Inicializace rodičovské třídy: 
 
-        (řádek v kódu 329)
+    (řádek v kódu 327)
         super().__init__()
 
 >Nastavení obrázku kamene a uložení obrázku, který se použije při vykreslování:
         
-        (řádek v kódu 328)
+    (řádek v kódu 328)
         self.image = image
-
->Uložení obrázku, který se použije při vykreslování:
-
-        (řádek v kódu 329)
-        self.rect = self.image.get_rect()
 
 >Nastavení rect pro pozicování:
 Získá rect pro obrázek a nastaví jeho středové souřadnice na (x, y). Tím se určí počáteční pozice kamene na obrazovce.
 
-
-        (řádky v kódu 329 a 330)
+    (řádky v kódu 329 a 330)
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
 
->Nastavení typu kamene (to jsme si vytvořil pro možné rozšíření kódu)
-        
-        
-        (řádek v kódu 331)
+>Nastavení typu kamene (to jsem si vytvořil pro možné rozšíření kódu)
+            
+    (řádek v kódu 331)
         self.type = stone_type
 
 >Nastavení rychlosti kamene
 Nastaví náhodnou rychlost kamene v rozmezí od 1 do 5. To určuje, jak rychle se kámen pohybuje po obrazovce.
 
-        (řádek v kódu 332)
+    (řádek v kódu 332)
         self.speed = random.randint(1, 5)
 
->6.Metoda update(self) 
+>Metoda update(self) 
 Metoda, která se volá každým snímkem pro aktualizaci stavu kamene. U classy RedStone se self.speed odečítá od polohy obrázku, kde se zrovna nachází a pohybuje se směrem doleva. Naopak u classy WhiteStone je to naopak zde se self.speed přičítá a kámen se tedy pohybuje doprava.
 
         (řádky v kódu 334 a 335)

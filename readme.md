@@ -235,7 +235,7 @@ V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedSt
     
 **2.	Kameny (řádek v kódu125 až 141)**
 Metoda kameny +generuje nové meteority v pravidelných intervalech:
-Ze začátku mám zakomentované testování poté pokud proměnná do které se zaznamenává čas (round_time) je při odečtu minulého zaznamenaného času *(řádek v kódu 33: atribut self.last_stone_time)* větší nebo rovna *(řádek v kódu 34 atribut self.stone_cooldown)* -> pomocí smyčky for nastaví náhodný počet červených a bílích meteroidů a zavoláme si potřebnou classu do které se zaznamená *x(nastaveno), y(náhoda)* souřadnice a také se načte příslušný obrázek nakonec se určí typ meteroidu (to jsem si uvedl navíc nemuselo by to v kódu být jako ten typ). Dále jak s tím pracuje daná classa  si povíme níže (RedStone, WhiteStone)
+Ze začátku mám zakomentované testování poté pokud proměnná do které se zaznamenává čas (round_time) je při odečtu minulého zaznamenaného času *(řádek v kódu 33: atribut self.last_stone_time)* větší nebo rovna *(řádek v kódu 34: atribut self.stone_cooldown)* -> pomocí smyčky for nastaví náhodný počet červených a bílích meteroidů a zavoláme si potřebnou classu do které se zaznamená *x(nastaveno), y(náhoda)* souřadnice a také se načte příslušný obrázek nakonec se určí typ meteroidu (to jsem si uvedl navíc nemuselo by to v kódu být jako ten typ). Dále jak s tím pracuje daná classa  si povíme níže (RedStone, WhiteStone)
 Potom se ještě self_last_stone_time se aktualizuje na self.round_time
 
            
@@ -267,8 +267,8 @@ V této metodě se nadefinují opět barvy poté si nadefinuje jaký chceceme m�
 
 Pod tím následuje smyčka pro pauzu která se v principu podobá hlavní herní smyčce akorát zde se při stisku ENTER pauza nastaví na False a celá hra se spustí 
 
-                (řádky v kódu: 146 až 189)
-                #Nastavíme barvy 
+        (řádky v kódu: 146 až 189)
+                
         dark_yellow = "#938f0c"
         black=(0,0,0)
 
@@ -309,15 +309,12 @@ Pod tím následuje smyčka pro pauzu která se v principu podobá hlavní hern�
                         lets_continue = False                                       
 
 
->>> Player_1 (Player_2)
+>**Player_1 (Player_2)**
 
 Uvedu příklad pouze pro player_1 jelikož player_2 je téměř totžný
 Pokusím se vám tyto classy co nejlépe popsat a porovnat 
 
-(SPOLEČNÉ) hned ze začátku jak Player_1 tak i  Player_2 představují hráče ve hře a dědí od pygame.sprite.Sprite (řádky 191 a 245) >co to znamená >znamená to že jak Player_1 tak Player_2 jsou podtřídou třídy Sprite z modulu pygame.sprite. Dědičnost v objektově orientovaném programování umožňuje, aby třída (potomek) zdědila atributy a metody jiné třídy (rodiče). V našem případě bychom to mohli chápat nějak takto:
-1.Vlastnosti a Metody pygame.sprite.Sprite:
-(řádky v kódu:  )
-
+(SPOLEČNÉ) hned ze začátku jak Player_1 tak i  Player_2 představují hráče ve hře a dědí od pygame.sprite.Sprite *(řádky v kódu:Player_1 191; Player_2 247)* >co to znamená >znamená to že jak Player_1 tak Player_2 jsou podtřídou třídy Sprite z modulu pygame.sprite. Dědičnost v objektově orientovaném programování umožňuje, aby třída (potomek) zdědila atributy a metody jiné třídy (rodiče). V našem případě bychom to mohli chápat nějak takto:
 
 1. Vlastnosti a Metody (pygame.sprite.Sprite):
 
@@ -325,23 +322,24 @@ pygame.sprite.Sprite poskytuje základní vlastnosti a metody, které jsou užit
 Tím, že Player_1 dědí od pygame.sprite.Sprite, automaticky získává tyto vlastnosti a metody a může je využívat nebo přepisovat podle potřeby.
 
 2. Skupiny spritů (pygame.sprite.Group):
-(řádky v kódu: 191 a 248)
+*(řádky v kódu:Player_1 191; Player_2 248)*
 pygame.sprite.Sprite umožňuje instancím (objektům) být přidávány do skupin spritů (pygame.sprite.Group). Skupiny spritů usnadňují správu a manipulaci s kolekcemi spritů. Můžete například aktualizovat všechny sprity ve skupině najednou nebo je všechny najednou vykreslit.
-V kódu Player_1 používá skupinu spritů pro střely (self.bullets řádek č. 203 a 259), což usnadňuje jejich správu a aktualizaci.
+V kódu Player_1 používá skupinu spritů pro střely *(self.bullets řádek č. 202 a 258)*, což usnadňuje jejich správu a aktualizaci.
 
 3. Metoda __init__ v pygame.sprite.Sprite:
 Při volání super().__init__() v konstruktoru Player_1 se volá konstruktor rodičovské třídy pygame.sprite.Sprite. To zajišťuje, že jakékoli inicializační kód v pygame.sprite.Sprite je proveden i pro instanci Player_1. 
 >>částečně stejné 
-(řádky v kódu: 194 až 214 s řádky 250 až 270) jsou zde uvedeny atributy(proměnné)  Player_1 a Player_2, kde největší odlišnost je v tom, že při načítání se načte jiný obrázek (popis načítání a umístění obrázku je popsán v bodě 1.3) (je zde ale navíc použito pygame.transform.rotate(self.image, 270)  který obrázek pootočí o požadovaný počet stupňů)
-""
+(řádky v kódu: Player_1 194 až 214 s řádky Player_2 250 až 270) jsou zde uvedeny atributy(proměnné)  Player_1 a Player_2, kde největší odlišnost je v tom, že při načítání se načte jiný obrázek (popis načítání a umístění obrázku je popsán v bodě 1.3) (je zde ale navíc použito pygame.transform.rotate(self.image, 270)  který obrázek pootočí o požadovaný počet stupňů)
+
 Poté jsou zde doposud nezmíněné atributy jako self.lives = 5 (životy), self.speed = 8 (rychlost vemirných lodí)
 
 
->Metoda update(self)
+>>Metoda update(self)
+(SPOLEČNÉ)
 díky této metodě, která je volána do hlavní herní smyčky se hráči ovládají, popis ovadání je poznamenán v bodě OVLÁDÁNÍ HRY, na konci této metody je voláno self.bullets.update()  což aktualizuje všechny střely, které patří do skupiny self.bullets.
 
 
-            (řádky v kódu 217 až 229)
+            (řádky v kódu:Player_1 217 až 229; Player_2 273 až 288)
         def update(self):
             keys = pygame.key.get_pressed()
             if keys[pygame.K_LEFT] and self.rect.left > 605:
@@ -359,12 +357,12 @@ díky této metodě, která je volána do hlavní herní smyčky se hráči ovl�
             self.bullets.update()
 
 
->Metoda fire_bullet(self):
+>>Metoda fire_bullet(self):
+*částečně stejné akorát (řádek v kódu:Player_1 238 a Player_2 293) se liší 10 a -10 což je ryschlost a zároveň pohybystřely* 
+jedná se o jednoduchou metodu kdy při jejím zavolání se current_time nastaví na aktuální čas (zde jsem si chtěl vyzkoušet počítat čas podle metody pygame.time.get_ticks(), která je součástí knihovny  Pygame.) Tento čas se počítá od momentu, kdy byla volána funkce pygame.init() *(řádek v kódu 6)*. Tato metoda vrací počet milisekund, které uplynuly od doby, kdy byla Pygame inicializována. > potom se počítá množství vystřených střel a zároveň musí být splněna podmínka, která hráči umožňuje po uplynutí určité doby vystřelit, tak aby hráč nestřílel neustále, a poté se po každém výstřelu přehraje zvuk střely. 
 
-jedná se o jednoduchou metodu kdy při jejím zavolání se current_time nastaví na aktuální čas (zde jsem si chtěl vyzkoušet počítat čas podle metody pygame.time.get_ticks(), která je součástí knihovny  Pygame.) Tento čas se počítá od momentu, kdy byla volána funkce pygame.init() (řádek v kódu 6). Tato metoda vrací počet milisekund, které uplynuly od doby, kdy byla Pygame inicializována. > potom se počítá množství vystřených střel a zároveň musí být splněna podmínka, která hráči umožňuje po uplynutí určité doby vystřelit, tak aby hráč nestřílel neustále, a poté se po každém výstřelu přehraje zvuk střely. 
 
-
-            (řádky v kódu 235 až 241)
+    (řádky v kódu:Player_1 235 až 241; Player_2 290 až 296)
         def fire_bullet(self):
             current_time = pygame.time.get_ticks()
             if len(self.bullets) < 3 and current_time - self.last_shot_time >= self.shot_cooldown:
@@ -373,12 +371,12 @@ jedná se o jednoduchou metodu kdy při jejím zavolání se current_time nastav
                 self.last_shot_time = current_time
                 self.zap_sound.play()
 
->Metoda draw(self, surface):
+>>Metoda draw(self, surface):
 
 Další a zároveň poslední metodou v classe Game je draw, která vykreslí obrázek hráče na daný povrch na pozici danou jeho obdélníkem (rect) a poté vykreslí střely na daný povrch.
             
 
-            (řádky v kódu 243 až 245)
+    (řádky v kódu:Player_1 243 až 245; Player_2 298 až 300)
         def draw(self, surface):
         surface.blit(self.image, self.rect)
         self.bullets.draw(surface)

@@ -406,6 +406,7 @@ self.image = pygame.Surface((15, 5)) je velikost střely a poté pomocí podmín
             self.shooter = shooter
 
 >>Metoda update(self):
+
 >Aktualizace pozice:
 Přidává hodnotu speed k souřadnici x obdélníku (rect), což způsobuje pohyb střely ve směru její rychlosti.
 

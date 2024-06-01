@@ -91,7 +91,7 @@ V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedSt
 
 1. Inicializujeme pomocí __init__ () naši class jedná se o tzv. konstruktor, který nastavuje základní atributy (proměnné) dané classy:
 
-    1.1 Herní proměnné 
+ ** 1.1 Herní proměnné** 
 	    	
             
     (řádky v kódu: 27 až 34)
@@ -104,7 +104,7 @@ V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedSt
         self.last_stone_time = 0                        #Poslední čas vytvoření meteoritu.
         self.stone_cooldown = 10                        #  self.stone_cooldown ŘÍKÁ ZA JAK DLOUHO SE VYGENERUJE DALŠÍ SÉRIE METEORITŮ (časové intervali mezi generování meteriotů)
 
-     1.2 Hudba v pozadí:
+ ** 1.2 Hudba v pozadí:**
 		Zde se při zavolání classy  Game před hlavní herní smyčkou načte hudba 
         (řádek: 37) a začne se přehrávat hudba (řádek: 38) poté, aby hudba byla jen v pozadí je pomocí řádku 39 ztlumena 
         *hedba je neoficiálně stažena z youtube pomocí webové stránky: https://en3.onlinevideoconverter.pro/297wG/youtube-converter-mp3 
@@ -116,7 +116,7 @@ V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedSt
             pygame.mixer.music.play(-1, 0.0)
             pygame.mixer.music.set_volume(0.05)
 
-    1.3 **Obrázky v pozadí:** 
+ ** 1.3 Obrázky v pozadí:** 
         Podobně jako u bodu výše se soubor načte ze složky, kde byl uložen - > poté dané pozadí zmenšíme jak potřebujeme (zde podle velikosti šířky céle obrazovky hry a výšku volíme podle velikosti herního pole kde se nachází kosmické lodě) -> řádek 45 je laicky řečeno  nastaví proměnnou self.background_image_rect na obdélník (rect), který obklopuje celý obrázek self.background_image." -> řádek 46 jedná se o umístění obrázku (v tomto případu je po provedení tohoto řádku kódu levý horní roh obrázku self.background_image umístěn na pozici x=0 a y=100 na obrazovce.)
     **Jinými slovy, tento obdélník bude obsahovat informace o tom, kde se obrázek nachází a jak je velký. Tyto informace jsou užitečné pro umístění obrázku na obrazovku nebo pro detekci kolizí.*
 

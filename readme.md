@@ -478,15 +478,20 @@ Nastaví náhodnou rychlost kamene v rozmezí od 1 do 5. To určuje, jak rychle 
     (řádek v kódu 332)
         self.speed = random.randint(1, 5)
 
->Metoda update(self) 
+>Metoda update(self)
+*zde se liší classa RedStone od WhiteStone*
 Metoda, která se volá každým snímkem pro aktualizaci stavu kamene. U classy RedStone se self.speed odečítá od polohy obrázku, kde se zrovna nachází a pohybuje se směrem doleva. Naopak u classy WhiteStone je to naopak zde se self.speed přičítá a kámen se tedy pohybuje doprava.
 
-        (řádky v kódu 334 a 335)
+        (řádky v kódu: RedStone 334 a 335)
         def update(self):
             self.rect.x -= self.speed
 
+        (řádky v kódu: RedStone 346 a 347)
+        def update(self):
+            self.rect.x += self.speed
 
-Pod tímto by mělo být tzv. použití logiky, kterou jsme si výše udělali a v kódu níže se bude jen volat nad a do hlavní herní smyčky. Jelikož je to moje první hra v pygame zkusil jsem přidat i nějakou herní logiku do a pod hlavní herní smyčku, jelikož určité internetové zdroje uvádí. Že t není špatně, psát herní logiku do části, kde se nachází hlavní herní smyčka, ale není to přehledné, proto se doporučuje využít objektově orientovaného programování.
+
+Pod tímto by mělo být tzv. použití logiky, kterou jsme si výše udělali a v kódu níže se bude jen volat nad a do hlavní herní smyčky. Jelikož je to moje první hra v pygame zkusil jsem přidat i nějakou herní logiku do a pod hlavní herní smyčku, jelikož určité internetové zdroje uvádí, že to není špatně psát herní logiku do části, kde se nachází hlavní herní smyčka, ale není to přehledné, proto se doporučuje využít objektově orientovaného programování s veškerou herní logiku psát mimo hlavní herní smyčku.
 
         
 >Před hlavní herní smyčkou 

@@ -89,7 +89,7 @@ V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedSt
 
 >>> **Game** -> představuje hlavní herní logiku a funkce pro hru "Starwars" 
 
-1. Inicializujeme pomocí __init__ () naši class jedná se o tzv. konstruktor, který nastavuje základní atributy (proměnné) dané classy:
+**1. Inicializujeme pomocí __init__ () naši class jedná se o tzv. konstruktor, který nastavuje základní atributy (proměnné) dané classy:**
 
   **1.1 Herní proměnné** 
 	    	

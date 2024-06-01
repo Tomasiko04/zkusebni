@@ -158,7 +158,7 @@ V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedSt
             self.custom_font_large=pygame.font.Font("fonts/DeathStar-VmWB.ttf",40)
 
   **1.5 Aktualizace hry** 
-        /Tato aktualizace má za úkol, aby při zavolání v této funkce se proměnná round_time zvětšila o 1. Je to důležité jelikož na základě round_time pracuje časomíra, která je zobrazena pod názvem hry, když na sebe mohou vesmírné lodě střílet 
+        Tato aktualizace má za úkol, aby při zavolání v této funkce se proměnná round_time zvětšila o 1. Je to důležité jelikož na základě round_time pracuje časomíra, která je zobrazena pod názvem hry, když na sebe mohou vesmírné lodě střílet 
                 
                 (řádky v kódu: 61 až 65)
             def update(self):
@@ -171,14 +171,16 @@ V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedSt
         Metoda (funkce) draw vykresluje herní prvky na obrazovku 
         1. načtu si barvu > 2. Nastavím si texty > 3. vkreslení do obrazovky 
 
-                1. načtu si barvu (řádky v kódu: 67 až 68)
-            
+                
             def draw(self):
+
+                1. načtu si barvu (řádky v kódu: 67 až 68)
+
                 dark_yellow = pygame.Color("#938f0c") 
 
 
                 2. Nastavím si texty (řádky v kódu: 71 až 107) 
-                        #Nastevení textu
+                        
                 catch_text = self.custom_font_large.render("Star", True, dark_yellow)
                 catch_text_rect = catch_text.get_rect()
                 catch_text_rect.centerx = width // 2

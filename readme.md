@@ -1,4 +1,4 @@
-***Starwars***
+**Starwars**
 
 
 >**Popis hry**

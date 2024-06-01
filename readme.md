@@ -134,9 +134,9 @@ V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedSt
             self.background_space_img_rect.topleft = (0,500)
         
         
-    *pozn. Kdyby jste se divili proč je šířka vrchního pozdí 1250 a dolního jen 1200 je to kvůli tomu aby pozadí výše bylo správně vzhledově umístěno a postavě napravo nebyla u “seknuta hlava“ jinak by zde šla šířka pozadí nastavit pod proměnnou width
+    **pozn. Kdyby jste se divili proč je šířka vrchního pozdí 1250 a dolního jen 1200 je to kvůli tomu aby pozadí výše bylo správně vzhledově umístěno a postavě napravo nebyla u “seknuta hlava“ jinak by zde šla šířka pozadí nastavit pod proměnnou width*
 
-    1.4 Fonty 
+  **1.4 Fonty** 
         V této hře jsem vyzkoušel i dva způsoby vkládání textů. Konkrétně se jedná o tzv. systémové a vlastní fonty
         
                 Systémové fonty:
@@ -157,7 +157,7 @@ V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedSt
             self.custom_font_medium=pygame.font.Font("fonts/DeathStar-VmWB.ttf",25)
             self.custom_font_large=pygame.font.Font("fonts/DeathStar-VmWB.ttf",40)
 
-    1.5 Aktualizace hry 
+  **1.5 Aktualizace hry** 
         Tato aktualizace má za úkol, aby při zavolání v této funkce se proměnná round_time zvětšila o 1. Je to důležité jelikož na základě round_time pracuje časomíra, která je zobrazena pod názvem hry, když na sebe mohou vesmírné lodě střílet 
                 
                 (řádky v kódu: 61 až 65)
@@ -167,7 +167,7 @@ V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedSt
                     self.round_time += 1
                     self.slow_down_cycle = 0
     
-    1.6 Vykreslení
+  **1.6 Vykreslení**
         Metoda (funkce) draw vykresluje herní prvky na obrazovku 
         1. načtu si barvu > 2. Nastavím si texty > 3. vkreslení do obrazovky 
 

@@ -507,10 +507,47 @@ Pod tímto by mělo být tzv. použití logiky, kterou jsme si výše udělali a
 
     (řádky v kódu 358 a 360)
 
-        one_player_1 = Player_1()
-        one_player_2 = Player_2()
+        one_player_1 = Player_1()   # one_player_1 instance třídy Player_1()
+        one_player_2 = Player_2()   # one_player_2 instance třídy Player_2()
+
+        **Co je to inscenace 
+        Když vytvoříte instanci třídy, vytváříte konkrétní výskyt této třídy, který má své vlastní jedinečné hodnoty atributů a může provádět akce pomocí metod definovaných v této třídě. Například, pokud máme třídu Auto, pak instance této třídy může být konkrétní auto s různými vlastnostmi, jako je značka, barva, rychlost atd.
+
+        class Auto:
+            def __init__(self, značka, barva):
+                self.značka = značka
+                self.barva = barva
+
+        auto1 = Auto("Škoda", "červená")
+        auto2 = Auto("Ford", "modrá")
+
+        Zde auto1 a auto2 jsou instance třídy Auto. Každá instance má své vlastní hodnoty pro atributy značka a barva.**
+
+
+
+
 >>Vytvoření objektu Game:
 
 je inicializována s hráči one_player_1 a one_player_2 a skupinou stone_group.
+my_game je opět instance třídy Game 
+
+    (řádek v kódu 364)
+        my_game = Game(one_player_1, one_player_2, stone_group)
+
+>>Poté proměnnou *lets_continue* nastavíme na True tzn. že může probíhat hlavní herní smyčka, dokud se *lets_continue* nenastaví na False.
+
+>>Voláme metodu *my_game.kameny()*, která mi po určitém nastaveném čase přidá meteoroidy. 
+
+>>Před samotným spuštěním hry se pomocí zavolání metody *my_game.pause_game("STARWARS", "Stiskni enter pro zahajeni hry"," ")* hra pozastaví a vypíše mi to předem určený text.
+
+>>*clock = pygame.time.Clock()* vytváří objekt Clock, který se používá pro správu času a nastavování snímkové frekvence.
+
+>>*start_time = time.time()* ukládá aktuální čas do proměnné start_time. Tento čas může být použit pro měření doby trvání hry nebo jiných časově závislých událostí.
+
+
+
+
+
+
 
 

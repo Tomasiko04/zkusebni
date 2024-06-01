@@ -81,10 +81,11 @@ pygame.time.Clock() je konstruktor třídy Clock v knihovně Pygame, který vytv
 
 
 >>Classy (třídy)
+
 Classa neboli třída je laicky řečeno jakýsi druh datové struktury, která nám organizuje kód do určitých logických celků. Tyto třídy mohou například reprezentovat herní postavy, překážky, efekty atd. Každá třída může mít atributy (proměnné) a metody (funkce), které definují chování a vlastnosti této třídy.
 V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedStone)
 
-Popis class a jejich atributů a metod
+"Popis class a jejich atributů a metod"
 
 >>> Game -> představuje hlavní herní logiku a funkce pro hru "Starwars" 
 

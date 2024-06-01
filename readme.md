@@ -223,3 +223,14 @@ Popis class a jejich atributů a metod
                 screen.blit(lives_text_2, lives_text_rect_2)
                 #screen.blit(time_text, time_text_rect)     # Pouze sekundy
                 screen.blit(time_text1, time_text_rect1)
+
+                4. + tvary a ohraničení (řádky v kódu: 121 až 122)
+                pygame.draw.rect(screen, tyrkys, (0, 100, width, height - 200), 5)
+                pygame.draw.line(screen, tyrkys, (width // 2, 105), (width // 2, 495), 5)
+    
+    1.7	Kameny 
+            Metoda kameny +generuje nové meteority v pravidelných intervalech:
+            Ze začátku mám zakomentované testování poté pokud proměnná do které se zaznamenává čas (round_time) je při odečtu minulého zaznamenaného času (self.last_stone_time atribut řádek 33 )větší nebo rovna atributu  self.stone_cooldown (atribut  řádek 34) -> pomocí smyčky for nastaví náhodný počet červených a bílích meteroidů a zavoláme si potřebnou classu do které se zaznamená x(zvoleno), y(náhoda) souřadnice a také se načte příslušný obrázek nakonec se určí typ meteroidu (to jsem si uvedl navíc nemuselo by to v kódu být jako ten typ). Dále jak s tím pracuje daná classa  si povíme níže (RedStone, WhiteStone)
+            Potom se ještě atribut self_last_stone_time se aktualizuje na self.round_time
+
+                    (řádky v kódu: 126 až 142) 

@@ -10,7 +10,7 @@ Tato hra je inspirována sci-fi filmy Star Wars. Jedná se o soubojovou arkádov
 player_2 => červená vesmírná loď > imunní proti červeným meteoroidům)
 
 
-Ovládání hry:
+>Ovládání hry:
 
 Hráč 1:
 
@@ -25,7 +25,7 @@ Hráč 2:
 
     Střelba: Klávesa "C" (podle délky stisku klávesy se vystřelí určitý počet střel min.1 max.3)
 
-Popis kódu 
+>Popis kódu 
 
 V této části, která bude značně nejdelší se Vám pokusím co nejlépe popsat a vysvětlit co daný kód umí.
 

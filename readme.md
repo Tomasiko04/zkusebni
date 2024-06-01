@@ -381,13 +381,31 @@ Další a zároveň poslední metodou v classe Game je draw, která vykreslí ob
         surface.blit(self.image, self.rect)
         self.bullets.draw(surface)
 
->>> Bullet
+>**Bullet**
 
-podobně jako u Plaeyer_1 a Player_2 
-dědí od pygame.sprite.Sprite (řádek v kódu 302 Player_1) >co to znamená >znamená to že Bullet je podtřídou třídy Sprite z modulu pygame.sprite. Dědičnost v objektově orientovaném programování umožňuje, aby třída (potomek) zdědila atributy a metody jiné třídy (rodiče). V konstruktoru jsme si definovali i souřednice x, y a poté i speed(rychlost pohybu hráče) a shooter(druh střelce)
+*podobně jako u Player_1 a Player_2* 
+dědí od pygame.sprite.Sprite (řádek v kódu 302) >co to znamená >znamená to že Bullet je podtřídou třídy Sprite z modulu pygame.sprite. Dědičnost v objektově orientovaném programování umožňuje, aby třída (potomek) zdědila atributy a metody jiné třídy (rodiče). V konstruktoru jsme si definovali i souřednice *x, y* a poté i *speed(rychlost pohybu hráče)* a *shooter(druh střelce)* je zde i *super().__init__()* což je popsáno v bodě 3 v části **Player_1 a Player_2**
 self.image = pygame.Surface((15, 5)) je velikost střely a poté pomocí podmínky když známe typ shootra vykreslí se nám pomocí podmínky příslušná barva střel > poté převedeme na rect a umístíme danou střelu podle daných x a y souřadnic 
 
->>>>Metoda update(self):
+    (řádky v kódu: 302 až 317)
+        class Bullet(pygame.sprite.Sprite):
+        def __init__(self, x, y, speed, shooter):
+            super().__init__()
+            self.image = pygame.Surface((15, 5))
+            
+                #barvy střel
+            if shooter==1:
+                    self.image.fill((255, 165, 0))
+            else:
+                    self.image.fill((0, 0, 255))
+
+            self.rect = self.image.get_rect()
+            self.rect.centerx = x
+            self.rect.centery = y
+            self.speed = speed
+            self.shooter = shooter
+
+>>Metoda update(self):
 >Aktualizace pozice:
 Přidává hodnotu speed k souřadnici x obdélníku (rect), což způsobuje pohyb střely ve směru její rychlosti.
 

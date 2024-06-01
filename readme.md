@@ -70,7 +70,7 @@ určit název herního okna
 
 Nastavení hry
 
-    (řádky v kódu 8 až 12)       
+    (řádky v kódu 17 a 18 )       
         fps = 60
         clock = pygame.time.Clock()
 
@@ -85,7 +85,7 @@ pygame.time.Clock() je konstruktor třídy Clock v knihovně Pygame, který vytv
 Classa neboli třída je laicky řečeno jakýsi druh datové struktury, která nám organizuje kód do určitých logických celků. Tyto třídy mohou například reprezentovat herní postavy, překážky, efekty atd. Každá třída může mít atributy (proměnné) a metody (funkce), které definují chování a vlastnosti této třídy.
 V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedStone)
 
-"Popis class a jejich atributů a metod"
+>>Popis class a jejich atributů a metod
 
 >>> Game -> představuje hlavní herní logiku a funkce pro hru "Starwars" 
 
@@ -94,39 +94,40 @@ V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedSt
     1.1 Herní proměnné 
 	    	
             
-            (řádky v kódu: 27 až 34)
-            self.round_time = 0                             #Čas trvání aktuálního kola hry.
-        self.slow_down_cycle = 0                        #Počítadlo cyklů pro zpomalení aktualizace času kola.        
+    (řádky v kódu: 27 až 34)
+        self.round_time = 0                         #Čas trvání aktuálního kola hry.
+        self.slow_down_cycle = 0                    #Počítadlo cyklů pro zpomalení aktualizace času kola.        
         self.our_player_1 = our_player1             #Odkazy na objekty hráčů.
         self.our_player_2 = our_player2             #Odkazy na objekty hráčů.
-        self.group_of_stones = group_of_stones          #Skupina meteoritů.  
+        self.group_of_stones = group_of_stones      #Skupina meteoritů.  
 
         self.last_stone_time = 0                        #Poslední čas vytvoření meteoritu.
         self.stone_cooldown = 10                        #  self.stone_cooldown ŘÍKÁ ZA JAK DLOUHO SE VYGENERUJE DALŠÍ SÉRIE METEORITŮ (časové intervali mezi generování meteriotů)
 
      1.2 Hudba v pozadí:
-		Zde se při zavolání classy před hlavní herní smyčkou načte hudba (řádek: 37) a začne se přehrávat hudba (řádek: 38) poté, aby hudba byla jen v pozadí je pomocí řádku 39 ztlumena 
+		Zde se při zavolání classy  Game před hlavní herní smyčkou načte hudba 
+        (řádek: 37) a začne se přehrávat hudba (řádek: 38) poté, aby hudba byla jen v pozadí je pomocí řádku 39 ztlumena 
         *hedba je neoficiálně stažena z youtube pomocí webové stránky: https://en3.onlinevideoconverter.pro/297wG/youtube-converter-mp3 
                 
 
-               (řádky v kódu: 37 až 39)             
-             #Hudba v pozadí
+    (řádky v kódu: 37 až 39)             
+            
             pygame.mixer.music.load("media/bg_starwars.mp3")
             pygame.mixer.music.play(-1, 0.0)
             pygame.mixer.music.set_volume(0.05)
 
     1.3 Obrázky v pozadí: 
-        Podobně jako u bodu výše se soubor načte ze složky, kde byl uložen - > poté dané pozadí zmenšíme jak potřebujeme (zde podle velikosti šířky céle obrazovky hry a výšku volíme podle velikosti herního pole kde se nachází kosmické lodě) -> řádek 44 je laicky řečeno  nastaví proměnnou self.background_image_rect na obdélník (rect), který obklopuje celý obrázek self.background_image." -> řádek 45 jedná se o umístění obrázku (v tomto případu je po provedení tohoto řádku kódu levý horní roh obrázku self.background_image umístěn na pozici x=0 a y=100 na obrazovce.)
-        *Jinými slovy, tento obdélník bude obsahovat informace o tom, kde se obrázek nachází a jak je velký. Tyto informace jsou užitečné pro umístění obrázku na obrazovku nebo pro detekci kolizí. 
+        Podobně jako u bodu výše se soubor načte ze složky, kde byl uložen - > poté dané pozadí zmenšíme jak potřebujeme (zde podle velikosti šířky céle obrazovky hry a výšku volíme podle velikosti herního pole kde se nachází kosmické lodě) -> řádek 45 je laicky řečeno  nastaví proměnnou self.background_image_rect na obdélník (rect), který obklopuje celý obrázek self.background_image." -> řádek 46 jedná se o umístění obrázku (v tomto případu je po provedení tohoto řádku kódu levý horní roh obrázku self.background_image umístěn na pozici x=0 a y=100 na obrazovce.)
+    *Jinými slovy, tento obdélník bude obsahovat informace o tom, kde se obrázek nachází a jak je velký. Tyto informace jsou užitečné pro umístění obrázku na obrazovku nebo pro detekci kolizí. 
 
-            # Obrázek v pozadí
-                (řádky v kódu: 43 až 46 hlavní pozadí na němž se pohybují vesmírné lodě)
+            
+        (řádky v kódu: 43 až 46 hlavní pozadí na němž se pohybují vesmírné lodě)
             self.background_image = pygame.image.load("img/bg_starwars3.webp")
             self.background_image = pygame.transform.scale(self.background_image, (1250, 400))
             self.background_image_rect = self.background_image.get_rect()
             self.background_image_rect.topleft = (0, 100)
 
-                (řádky v kódu: 48 až 51 pozadí pod hlavním pozadím)
+        (řádky v kódu: 48 až 51 pozadí pod hlavním pozadím)
             self.background_space_img = pygame.image.load("img/bg_space.jpg")
             self.background_space_img = pygame.transform.scale(self.background_space_img, (1200, 100))
             self.background_space_img_rect = self.background_space_img.get_rect()

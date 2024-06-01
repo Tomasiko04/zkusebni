@@ -31,7 +31,7 @@ V této části, která bude značně nejdelší se Vám pokusím co nejlépe po
 
 Na začátku celého kódu musíme importovat několik knihoven (pygame, random, time)
 
-    řádky v kódu 1-3
+    (řádky v kódu 1-3)
         import pygame
         import random
         import time
@@ -39,11 +39,12 @@ Na začátku celého kódu musíme importovat několik knihoven (pygame, random,
 
 Poté je potřeba inicializovat celou hru pomocí
         
+    (řádek v kódu 6)
         pygame.init() 
         
 určit si barvy a velikost rozlišení obrazovky
 
-    řádky v kódu 8-12
+    (řádky v kódu 8-12)
         # Barvy
         tyrkys = "#00fff8"
         # Obrazovka
@@ -53,7 +54,7 @@ určit si barvy a velikost rozlišení obrazovky
 
 a pomocí
 
-    řádek v kódu 13
+    (řádek v kódu 13)
         screen = pygame.display.set_mode((width, height))
         
 si určit velikost rozlišení obrazovky
@@ -61,7 +62,7 @@ si určit velikost rozlišení obrazovky
 
 a pomocí 
 
-    řádek v kódu 14
+    (řádek v kódu 14)
         pygame.display.set_caption("Starwars")
 
 určit název herního okna
@@ -69,7 +70,7 @@ určit název herního okna
 
 Nastavení hry
 
-    řádky v kódu 8-12       
+    (řádky v kódu 8 až 12)       
         fps = 60
         clock = pygame.time.Clock()
 
@@ -80,8 +81,8 @@ pygame.time.Clock() je konstruktor třídy Clock v knihovně Pygame, který vytv
 
 
 >>Classy (třídy)
-    Classa neboli třída je laicky řečeno jakýsi druh datové struktury, která nám organizuje kód do určitých logických celků. Tyto třídy mohou například reprezentovat herní postavy, překážky, efekty atd. Každá třída může mít atributy (proměnné) a metody (funkce), které definují chování a vlastnosti této třídy.
-    V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedStone)
+Classa neboli třída je laicky řečeno jakýsi druh datové struktury, která nám organizuje kód do určitých logických celků. Tyto třídy mohou například reprezentovat herní postavy, překážky, efekty atd. Každá třída může mít atributy (proměnné) a metody (funkce), které definují chování a vlastnosti této třídy.
+V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedStone)
 
 Popis class a jejich atributů a metod
 

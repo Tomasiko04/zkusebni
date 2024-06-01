@@ -233,15 +233,15 @@ V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedSt
                 pygame.draw.rect(screen, tyrkys, (0, 100, width, height - 200), 5)
                 pygame.draw.line(screen, tyrkys, (width // 2, 105), (width // 2, 495), 5)
     
-2.	Kameny (řádek v kódu125 až 141)
+**2.	Kameny (řádek v kódu125 až 141)**
 Metoda kameny +generuje nové meteority v pravidelných intervalech:
-Ze začátku mám zakomentované testování poté pokud proměnná do které se zaznamenává čas (round_time) je při odečtu minulého zaznamenaného času (řádek 33: self.last_stone_time )větší nebo rovna self.stone_cooldown (řádek 34) -> pomocí smyčky for nastaví náhodný počet červených a bílích meteroidů a zavoláme si potřebnou classu do které se zaznamená x(zvoleno), y(náhoda) souřadnice a také se načte příslušný obrázek nakonec se určí typ meteroidu (to jsem si uvedl navíc nemuselo by to v kódu být jako ten typ). Dále jak s tím pracuje daná classa  si povíme níže (RedStone, WhiteStone)
+Ze začátku mám zakomentované testování poté pokud proměnná do které se zaznamenává čas (round_time) je při odečtu minulého zaznamenaného času **(řádek v kódu 33: atribut self.last_stone_time)* větší nebo rovna **(řádek v kódu 34 atribut self.stone_cooldown) * -> pomocí smyčky for nastaví náhodný počet červených a bílích meteroidů a zavoláme si potřebnou classu do které se zaznamená **x(nastaveno), y(náhoda)* souřadnice a také se načte příslušný obrázek nakonec se určí typ meteroidu (to jsem si uvedl navíc nemuselo by to v kódu být jako ten typ). Dále jak s tím pracuje daná classa  si povíme níže (RedStone, WhiteStone)
 Potom se ještě self_last_stone_time se aktualizuje na self.round_time
 
            
-                (řádek v kódu 125 až 141)
-                def kameny(self):
-            #current_time = pygame.time.get_ticks()
+    (řádek v kódu 125 až 141)
+    def kameny(self):
+        #current_time = pygame.time.get_ticks()
         #print(self.round_time)
         #print(self.last_stone_time)
         #print(self.stone_cooldown)
@@ -261,7 +261,7 @@ Potom se ještě self_last_stone_time se aktualizuje na self.round_time
             else:
                 pass     
 
-3. Pauza hry
+**3. Pauza hry**
 Metoda pause_game pozastavuje hru a zobrazuje textové zprávy.
 V této metodě se nadefinují opět barvy poté si nadefinuje jaký chceceme mít hlavní text, podnadpis a text pro start a jejich umístění. Nakonec si vyplním obrazovku černou barvou a vykreslím(vypálím/vyblituju) daný text a nesmíme zapomenout na update obrazovky
 

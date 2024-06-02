@@ -626,20 +626,30 @@ Uvedl jsem si zde za 1. kolize Player_1 a kolize Player_2 a za 2. poté kontrolu
                 one_player_1.destroy_sound.play()
 
 *[stone for stone in stone_group if isinstance(stone, WhiteStone)]:* ... vytvoří seznam všech objektů v stone_group, které jsou instance třídy WhiteStone.
+
 *[stone for stone in stone_group if isinstance(stone, RedStone)]:* ... vytvoří seznam všech objektů v stone_group, které jsou instance třídy RedStone.
 
+
 *for white_stone in [stone for stone in stone_group if isinstance(stone, WhiteStone)]:* ... prochází všechny bílé kameny.
+
 *for red_stone in [stone for stone in stone_group if isinstance(stone, RedStone)]:* ... prochází všechny červené kameny.
 
+
 *if pygame.sprite.collide_rect(bullet, red_stone):* ... kontroluje, zda se hranice střely překrývají s hranicemi bílého kamene.
+
 *if pygame.sprite.collide_rect(bullet, red_stone):* ... kontroluje, zda se hranice střely překrývají s hranicemi červeného kamene.
+
 
 *bullet.kill()* ... odstraní střelu ze hry.
 
+
 *white_stone.kill()* odstraní bílý kámen ze hry.
+
 *red_stone.kill()* odstraní červený kámen ze hry.
 
+
 *one_player_1.destroy_sound.play()* přehraje zvuk zničení, který signalizuje zásah.
+
 *one_player_2.destroy_sound.play()* přehraje zvuk zničení, který signalizuje zásah.
 
 >>**u kolizí Player_1 se proměnné *one_player_1* zamění za *one_player_2* a proměnné *one_player_2* se zamění za *one_player_1***

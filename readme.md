@@ -586,4 +586,18 @@ Poté jsme se rozhodl jak jsem výše několikrát zmiňoval, uvést do hlavní 
 
 Uvedl jsem si zde za 1. kolize Player_1 a kolize Player_2 a za 2. poté kontrolu konce hry, když jednomu z hráčů dodou životy
 
->1. kolize
+>1. kolize hráčů (popíšu zde kolize Player_2, jelikož kolize Player_1 jsou naprosto stejné akorát jsou zde zaměněné proměnné aby to odpovídalo Player_1)
+
+    (řádky v kódu 398 až 402)
+
+    for bullet in one_player_1.bullets:
+        if pygame.sprite.collide_rect(bullet, one_player_2):
+            bullet.kill()                                   #KDYBY zde nebylo bullet.kill() tak se životy budou odečítat hrozně rychle
+            one_player_2.lives -= 1
+            one_player_2.demage_by_bullet_sound.play()
+
+*for bullet in one_player_1.bullets:* ... prochází všechny střely, které hráč 1 vystřelil
+*if pygame.sprite.collide_rect(bullet, one_player_2):* ... kontroluje, zda se hranice střely překrývají s hranicemi hráče 2. 
+*bullet.kill()* ... odstraní střelu ze hry
+*one_player_2.lives -= 1*  ... sníží počet životů hráče 1 o jedna
+*one_player_2.demage_by_bullet_sound.play()* ... přehraje zvuk poškození, který signalizuje zásah

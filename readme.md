@@ -11,6 +11,7 @@
 
 4.1 Základní nastavení hry
 
+
 4.2 Logika
 
 4.2.1 Classy

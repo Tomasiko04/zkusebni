@@ -11,18 +11,17 @@
 
 4.1 Základní nastavení hry
 
-
 4.2 Logika
 
 4.2.1 Classy
 
-4.2.2 Game
+4.2.1.1 Game
 
-4.2.3 Player_1 (Player_2)
+4.2.1.2 Player_1 (Player_2)
 
-4.2.4 Bullet
+4.2.1.3 Bullet
 
-4.2.5 RedStone (WhiteStone)
+4.2.1.4 RedStone (WhiteStone)
 
 4.3 Použití logiky
 
@@ -35,7 +34,7 @@
 6. ZÁVĚR
 
 
->**Popis hry**
+>**1. Popis hry**
 
 Tato hra je inspirována sci-fi filmy Star Wars. Jedná se o soubojovou arkádovou hru pro dva hráče, ve které se snažíte zničit nepřátelskou vesmírnou loď a přežít co nejdéle. Každý z hráčů má 5 životů, o které může snadno přijít - buď zásahem střelou, kterou proti němu vyšle protivník, nebo pokud se střetne s nepřátelským meteoroidem. Naopak každá z vesmírných lodí je imunní vůči svým meteoroidům, za které se může schovat při útoku nepřítele.
 
@@ -43,7 +42,7 @@ Tato hra je inspirována sci-fi filmy Star Wars. Jedná se o soubojovou arkádov
 
 player_2 => bílá vesmírná loď > imunní proti bílým meteoroidům)
 
->**Co potřebujete aby jste kód spustili**
+>**2. Co potřebujete aby jste kód spustili**
 
 >>Stáhnou si veškeré dokumenty k tomuto kódu (main.py, fonts, img, media)
 >>Pokud používáte pro spuštění kódu Visual Studio Code musíte si nainstalovat knihovnu pygame
@@ -51,7 +50,7 @@ Jak na to?
 Když otevřete vaše Visual Studio Code a otevřete si soubor main.py, který si stáhnete klikněte na Terminal > New Terminal > dole se vám otevře okno > napište do něj *pip install pygame* a stikněte klávesu ENETR > po chvíli se vám stáhne tato knihovna (pygame)
 
 
->**Ovládání hry:**
+>**3. Ovládání hry:**
 
 Hráč 1:
 
@@ -66,9 +65,9 @@ Hráč 2:
 
     Střelba: Klávesa "C" (podle délky stisku klávesy se vystřelí určitý počet střel min.1 max.3)
 
->**Popis kódu** 
+>**4. Popis kódu** 
 
->>Základní nastavení hry
+>>**4.1 Základní nastavení hry**
 
 V této části, která bude značně nejdelší se Vám pokusím co nejlépe popsat a vysvětlit co daný kód umí.
 
@@ -121,16 +120,16 @@ fps=počet snímků za sekundu
 pygame.time.Clock() je konstruktor třídy Clock v knihovně Pygame, který vytváří nový objekt Clock je používán k regulaci rychlosti herní smyčky.
 
 
+>>**4.2 Logika**
 
-
->>**Classy (třídy)**
+>>**4.2.1 Classy (třídy)**
 
 Classa neboli třída je laicky řečeno jakýsi druh datové struktury, která nám organizuje kód do určitých logických celků. Tyto třídy mohou například reprezentovat herní postavy, překážky, efekty atd. Každá třída může mít atributy (proměnné) a metody (funkce), které definují chování a vlastnosti této třídy.
 V této hře máme 6 tříd (Game, Plaeyr_1, Player_2, Bullet, WhiteStone, RedStone)
 
 >>**Popis class a jejich atributů a metod**
 
->>> **Game** -> představuje hlavní herní logiku a funkce pro hru "Starwars" 
+>>> **4.2.1.1 Game** -> představuje hlavní herní logiku a funkce pro hru "Starwars" 
 
 **1. Inicializujeme pomocí __init__ () naši class jedná se o tzv. konstruktor, který nastavuje základní atributy (proměnné) dané classy:**
 
@@ -352,7 +351,7 @@ Pod tím následuje smyčka pro pauzu která se v principu podobá hlavní hern�
                         lets_continue = False                                       
 
 
->**Player_1 (Player_2)**
+>**4.2.1.2 Player_1 (Player_2)**
 
 Uvedu příklad pouze pro player_1 jelikož player_2 je téměř totžný
 Pokusím se vám tyto classy co nejlépe popsat a porovnat 
@@ -424,7 +423,7 @@ Další a zároveň poslední metodou v classe Game je draw, která vykreslí ob
         surface.blit(self.image, self.rect)
         self.bullets.draw(surface)
 
->**Bullet**
+>**4.2.1.3 Bullet**
 
 *podobně jako u Player_1 a Player_2* 
 dědí od pygame.sprite.Sprite (řádek v kódu 302) >co to znamená >znamená to že Bullet je podtřídou třídy Sprite z modulu pygame.sprite. Dědičnost v objektově orientovaném programování umožňuje, aby třída (potomek) zdědila atributy a metody jiné třídy (rodiče). V konstruktoru jsme si definovali i souřednice *x, y* a poté i *speed(rychlost pohybu hráče)* a *shooter(druh střelce)* je zde i *super().__init__()* což je popsáno v bodě 3 v části **Player_1 a Player_2**
@@ -463,7 +462,7 @@ Pokud střela opustí obrazovku (její pravý okraj je menší než 0 nebo její
             if self.rect.right < 0 or self.rect.left > width:
                 self.kill()
 
->**RedStone (WhiteStone tato třída je téměř stejná až na to že se x souřadnice přičítá)**
+>**4.2.1.4 RedStone (WhiteStone tato třída je téměř stejná až na to že se x souřadnice přičítá)**
 
 Tato classa představuje ve hře červený kámen/meteoroid, který se pohybuje z levé strany na levou stranu hracího pole. U classy WhiteStone se pohybuje bílý kámen/meteoroid pohybující se pravé strany na levou **což je jediný rozdíl co tyto classy odlišuje** (u classy RedStone se odečítá x a u classy WhiteStone se x odečítá) Obě dvě tyto classy dědí od pygame.sprite.Sprite stejně jako například Player_1.
 
@@ -536,8 +535,8 @@ Metoda, která se volá každým snímkem pro aktualizaci stavu kamene. U classy
 
 Pod tímto by mělo být tzv. použití logiky, kterou jsme si výše udělali a v kódu níže se bude jen volat nad a do hlavní herní smyčky. Jelikož je to moje první hra v pygame zkusil jsem přidat i nějakou herní logiku do a pod hlavní herní smyčku, jelikož určité internetové zdroje uvádí, že to není špatně psát herní logiku do části, kde se nachází hlavní herní smyčka, ale není to přehledné, proto se doporučuje využít objektově orientovaného programování s veškerou herní logiku psát mimo hlavní herní smyčku.
 
->**Použití logiky**      
->Před hlavní herní smyčkou 
+>**4.3 Použití logiky**      
+>4.3.1 Před hlavní herní smyčkou 
 
 >>Vytvoříme si dvě skupiny jednu pro hráče a druhou pro meteoroidy 
 
@@ -587,7 +586,7 @@ my_game je opět instance třídy Game
 
 >>*start_time = time.time()* ukládá aktuální čas do proměnné start_time. Tento čas může být použit pro měření doby trvání hry nebo jiných časově závislých událostí.
 
->Hlavní cyklus
+>4.3.2 Hlavní cyklus
         (řádky v  kódu 374 až 500)
 
 Jak jsem výše zmiňoval mělo by zde být pouze volání class a jejich metod *(řádky v kódu 379 až 393)*, já jsem se pokusil do tohoto hlavního cyklu přidat i logiku, která by měla být použita výše v kódu 
@@ -779,3 +778,11 @@ Ve stručnosti, pokud jeden z hráčů Player_1 nebo Player_2 dosáhne nula živ
     clock.tick(fps)
 
 >Nakonec ***pygame.quit()*** ... tento příkaz slouží k ukončení knihovny Pygame a správnému uzavření všech jejích modulů, což zabrání potenciálním problémům s uvolněním zdrojů
+
+>**5. Odazy na (fonty, hudbu, zvuky, obrázky)**
+
+
+
+>**6. ZÁVĚR**
+
+Hned ze začátku tohoto závěru bych chtěl zmínit, že se jednalo o nejvíce složitý vytvořený kód, díky němuž jsem se toho dost naučil, hlavně co se týče určitých základů objektivně orientovaného programování. Co se týče nějakého mého hodnocení samotného kódu, určitě by šel zase napsat mnohem jednodušeji a přehledněji, než je napsán např. přidáním funkcí.

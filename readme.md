@@ -544,10 +544,8 @@ my_game je opět instance třídy Game
 
 >>*start_time = time.time()* ukládá aktuální čas do proměnné start_time. Tento čas může být použit pro měření doby trvání hry nebo jiných časově závislých událostí.
 
+>Hlavní cyklus
+        (řádky v  kódu 374 až 500)
 
-
-
-
-
-
+Jak jsem výše zmiňoval mělo by zde být pouze volání class a jejich metod *(řádky v kódu 379 až 393)*, já jsem se pokusil do tohoto hlavního cyklu přidat i logiku, která by měla být použita výše v kódu 
 

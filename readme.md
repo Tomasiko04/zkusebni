@@ -29,9 +29,7 @@
 
 4.3.2 Hlavní cyklus
 
-5. Odazy na (fonty, hudbu, zvuky, obrázky)
-
-6. ZÁVĚR
+5. ZÁVĚR
 
 
 >**1. Popis hry**
@@ -779,10 +777,6 @@ Ve stručnosti, pokud jeden z hráčů Player_1 nebo Player_2 dosáhne nula živ
 
 >Nakonec ***pygame.quit()*** ... tento příkaz slouží k ukončení knihovny Pygame a správnému uzavření všech jejích modulů, což zabrání potenciálním problémům s uvolněním zdrojů
 
->**5. Odazy na (fonty, hudbu, zvuky, obrázky)**
-
-
-
->**6. ZÁVĚR**
+>**5. ZÁVĚR**
 
 Hned ze začátku tohoto závěru bych chtěl zmínit, že se jednalo o nejvíce složitý vytvořený kód, díky němuž jsem se toho dost naučil, hlavně co se týče určitých základů objektivně orientovaného programování. Co se týče nějakého mého hodnocení samotného kódu, určitě by šel zase napsat mnohem jednodušeji a přehledněji, než je napsán např. přidáním funkcí.

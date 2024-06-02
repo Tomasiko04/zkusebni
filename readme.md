@@ -586,7 +586,7 @@ Poté jsme se rozhodl jak jsem výše několikrát zmiňoval, uvést do hlavní 
 
 Uvedl jsem si zde za 1. kolize Player_1 a kolize Player_2 a za 2. poté kontrolu konce hry, když jednomu z hráčů dodou životy
 
->1. kolize hráčů (popíšu zde kolize Player_2, jelikož kolize Player_1 jsou naprosto stejné akorát jsou zde zaměněné proměnné aby to odpovídalo Player_1)
+>1. Kolize hráčů (popíšu zde kolize Player_2, jelikož kolize Player_1 jsou naprosto stejné akorát jsou zde zaměněné proměnné aby to odpovídalo Player_1)
 
     (řádky v kódu 398 až 402)
 
@@ -606,4 +606,6 @@ Uvedl jsem si zde za 1. kolize Player_1 a kolize Player_2 a za 2. poté kontrolu
 
 *one_player_2.demage_by_bullet_sound.play()* ... přehraje zvuk poškození, který signalizuje zásah
 
->**u kolizí Player_1 se proměnné *one_player_1* zamění za *one_player_2* a proměnné *one_player_2* se zamění za *one_player_1***
+>>**u kolizí Player_1 se proměnné *one_player_1* zamění za *one_player_2* a proměnné *one_player_2* se zamění za *one_player_1***
+
+>2. Kontrola konce hry

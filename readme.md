@@ -605,3 +605,5 @@ Uvedl jsem si zde za 1. kolize Player_1 a kolize Player_2 a za 2. poté kontrolu
 *one_player_2.lives -= 1*  ... sníží počet životů hráče 1 o jedna
 
 *one_player_2.demage_by_bullet_sound.play()* ... přehraje zvuk poškození, který signalizuje zásah
+
+**u Player_1 se proměnné *one_player_1* se zamění za *one_player_2* a proměnné *one_player_2* se zamění za *one_player_1***

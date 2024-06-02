@@ -588,6 +588,7 @@ Uvedl jsem si zde za 1. kolize Player_1 a kolize Player_2 a za 2. poté kontrolu
 
 >1. Kolize hráčů (popíšu zde kolize Player_2, jelikož kolize Player_1 jsou naprosto stejné akorát jsou zde zaměněné proměnné aby to odpovídalo Player_1)
 
+>>Detekce protivníkovy střely
     (řádky v kódu 398 až 402)
 
     for bullet in one_player_1.bullets:
@@ -606,6 +607,42 @@ Uvedl jsem si zde za 1. kolize Player_1 a kolize Player_2 a za 2. poté kontrolu
 
 *one_player_2.demage_by_bullet_sound.play()* ... přehraje zvuk poškození, který signalizuje zásah
 
+
+>>Detekce kolizí střel hráče s bílými a červenými kameny  (u Player_1 je tato část kódu stejná)
+
+    (řádky v kódu: Player_2 404 až 415; Player_1 431 až 443)
+
+        # Collision detection with WhiteStone
+        for white_stone in [stone for stone in stone_group if isinstance(stone, WhiteStone)]:
+            if pygame.sprite.collide_rect(bullet, white_stone):
+                bullet.kill()                                       #kdyby zde nebylo bullet.kill() tak nebudou mizet střely (šipky hráče) při střtu s meteoritem
+                white_stone.kill()
+                one_player_1.destroy_sound.play()
+        # Collision detection with RedStone
+        for red_stone in [stone for stone in stone_group if isinstance(stone, RedStone)]:
+            if pygame.sprite.collide_rect(bullet, red_stone):
+                bullet.kill()                                       #kdyby zde nebylo bullet.kill() tak nebudou mizet střely (šipky hráče) při střtu s meteoritem
+                red_stone.kill()
+                one_player_1.destroy_sound.play()
+
+*[stone for stone in stone_group if isinstance(stone, WhiteStone)]:* ... vytvoří seznam všech objektů v stone_group, které jsou instance třídy WhiteStone.
+*[stone for stone in stone_group if isinstance(stone, RedStone)]:* ... vytvoří seznam všech objektů v stone_group, které jsou instance třídy RedStone.
+
+*for white_stone in [stone for stone in stone_group if isinstance(stone, WhiteStone)]:* ... prochází všechny bílé kameny.
+*for red_stone in [stone for stone in stone_group if isinstance(stone, RedStone)]:* ... prochází všechny červené kameny.
+
+*if pygame.sprite.collide_rect(bullet, red_stone):* ... kontroluje, zda se hranice střely překrývají s hranicemi bílého kamene.
+*if pygame.sprite.collide_rect(bullet, red_stone):* ... kontroluje, zda se hranice střely překrývají s hranicemi červeného kamene.
+
+*bullet.kill()* ... odstraní střelu ze hry.
+
+*white_stone.kill()* odstraní bílý kámen ze hry.
+*red_stone.kill()* odstraní červený kámen ze hry.
+
+*one_player_1.destroy_sound.play()* přehraje zvuk zničení, který signalizuje zásah.
+*one_player_2.destroy_sound.play()* přehraje zvuk zničení, který signalizuje zásah.
+
 >>**u kolizí Player_1 se proměnné *one_player_1* zamění za *one_player_2* a proměnné *one_player_2* se zamění za *one_player_1***
 
 >2. Kontrola konce hry
+

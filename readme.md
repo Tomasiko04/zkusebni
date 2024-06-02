@@ -565,18 +565,25 @@ Jako základ hry se dájí považovat řádky v kódu 374 až 377
 Pokud ale hráč na tento křížek neklikne, hra běží a volají se metody daných class
 
     (řádky v kódu: 379 až 393)
-        screen.fill((0, 0, 0))
-        screen.blit(my_game.background_image, my_game.background_image_rect)
-        screen.blit(my_game.background_space_img,my_game.background_space_img_rect)
-        
+        screen.fill((0, 0, 0))                                                          #překryje obrazovku černou barvou       
+        screen.blit(my_game.background_image, my_game.background_image_rect)                #vykreslí se požadované pozadí
+        screen.blit(my_game.background_space_img,my_game.background_space_img_rect)         #vykreslí se požadované pozadí
+    #vykreslí se a aktualizují se skupiny meteoritů a hráčů a dalších prvků
         stone_group.draw(screen)
         stone_group.update()
         player_group.draw(screen)
         player_group.update()
         my_game.update()
         my_game.draw()
-
+#kontrola, zda je čas vytvořit nové meteority, a pokud ano, vytvoří je a přidá do skupiny meteoritů.
         my_game.kameny()
-
+#Vykreslení hráčů
         one_player_1.draw(screen)
         one_player_2.draw(screen)
+
+Poté jsme se rozhodl jak jsem výše několikrát zmiňoval, uvést do hlavní herní smyčky herní logiku, která by měla být spíše v nějaké classe a poté se jen zavolá do hlavní herní smyčky.
+*Přišlo mi to dobré z důvodu porovnání toho že pokud zařadíme herní logiku přímo do hlavní herní smyčky stane se hlavní herní smyčka docela nepřehledná*
+
+Uvedl jsem si zde za 1. kolize Player_1 a kolize Player_2 a za 2. poté kontrolu konce hry, když jednomu z hráčů dodou životy
+
+>1. kolize

@@ -678,4 +678,61 @@ Uvedl jsem si zde za 1. kolize Player_1 a kolize Player_2 a za 2. poté kontrolu
 >>**u kolizí Player_1 se proměnné *one_player_1* zamění za *one_player_2* a proměnné *one_player_2* se zamění za *one_player_1***
 
 >2. Kontrola konce hry
+Ve stručnosti, pokud jeden z hráčů Player_1 nebo Player_2 dosáhne nula životů, hra se zastaví, vypíše se kdo vyhrál popřípadě, jak hrát od znovu (stisknutím klávesy ENTER). Pukod by hráči chtili hrát od začátku hra se resetuje a hra se nastaví do výchozího stavu.
 
+*pygame.display.update()* ... tento příkaz aktualizuje obrazovku *je to ekvivalent "vykreslení" aktuálního stavu hry*
+
+*clock.tick(fps)* ... tento příkaz řídí rychlost herního cyklu
+
+
+    (řádky v kódu 453 až 497)
+    if one_player_1.lives <= 0:
+        my_game.pause_game("Game Over", "Player 2 wins", "Press Enter to Restart")
+        one_player_1.lives = 5
+        one_player_2.lives = 5
+
+        my_game.last_stone_time = 0
+        my_game.stone_cooldown = 10
+            
+
+        my_game.round_time = 0
+        my_game.slow_down_cycle = 0
+                #Vyprázdnění/smazání meteoritů a střel
+        stone_group.empty()
+        one_player_1.bullets.empty()
+        one_player_2.bullets.empty()
+            #Původní poloha
+        one_player_1.rect.centerx = width - 150
+        one_player_1.rect.centery = height // 2
+        one_player_2.rect.centerx = 150
+        one_player_2.rect.centery = height // 2
+        my_game.kameny()
+        pygame.mixer.music.play(-1, 0.0)
+
+    if one_player_2.lives <= 0:
+        my_game.pause_game("Game Over", "Player 1 wins", "Press Enter to Restart")
+        one_player_1.lives = 5
+        one_player_2.lives = 5
+
+        my_game.last_stone_time = 0
+        my_game.stone_cooldown = 10
+
+
+        my_game.round_time = 0
+        my_game.slow_down_cycle = 0
+            #Vyprázdnění/smazání meteoritů a střel
+        stone_group.empty()
+        one_player_1.bullets.empty()
+        one_player_2.bullets.empty()
+            #Původní poloha
+        one_player_1.rect.centerx = width - 150
+        one_player_1.rect.centery = height // 2
+        one_player_2.rect.centerx = 150
+        one_player_2.rect.centery = height // 2
+        my_game.kameny()
+        pygame.mixer.music.play(-1, 0.0)
+    
+    pygame.display.update()
+    clock.tick(fps)
+
+>Nakonec ***pygame.quit()*** ... tento příkaz slouží k ukončení knihovny Pygame a správnému uzavření všech jejích modulů, což zabrání potenciálním problémům s uvolněním zdrojů

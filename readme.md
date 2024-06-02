@@ -560,4 +560,23 @@ Jako základ hry se dájí považovat řádky v kódu 374 až 377
             if event.type == pygame.QUIT:
                 lets_continue = False
 
-,kde pokud je *lets_continue* nasatveno na True hra probíhá a mezitím co hra běží, tak pomocí cyklu *for* se prochází veškeré *event* (jakákoli akce na herním poli) a pokud je tato akce rovna *QUIT* (kliknutí na křížek v pravém horním rohu pro zavření okna, ve kterém hra běží), herní okono se zavře, jelikož se *lets_continue = False* a hra se tím pádem ukončí  
+,kde pokud je *lets_continue* nasatveno na True hra probíhá a mezitím co hra běží, tak pomocí cyklu *for* se prochází veškeré *event* (jakákoli akce na herním poli) a pokud je tato akce rovna *QUIT* (kliknutí na křížek v pravém horním rohu pro zavření okna, ve kterém hra běží), herní okono se zavře, jelikož se *lets_continue = False* a hra se tím pádem ukončí.
+
+Pokud ale hráč na tento křížek neklikne, hra běží a volají se metody daných class
+
+    (řádky v kódu: 379 až 393)
+        screen.fill((0, 0, 0))
+        screen.blit(my_game.background_image, my_game.background_image_rect)
+        screen.blit(my_game.background_space_img,my_game.background_space_img_rect)
+        
+        stone_group.draw(screen)
+        stone_group.update()
+        player_group.draw(screen)
+        player_group.update()
+        my_game.update()
+        my_game.draw()
+
+        my_game.kameny()
+
+        one_player_1.draw(screen)
+        one_player_2.draw(screen)

@@ -575,9 +575,9 @@ Pokud ale hráč na tento křížek neklikne, hra běží a volají se metody da
         player_group.update()
         my_game.update()
         my_game.draw()
-#kontrola, zda je čas vytvořit nové meteority, a pokud ano, vytvoří je a přidá do skupiny meteoritů.
+    #kontrola, zda je čas vytvořit nové meteority, a pokud ano, vytvoří je a přidá do skupiny meteoritů.
         my_game.kameny()
-#Vykreslení hráčů
+    #Vykreslení hráčů
         one_player_1.draw(screen)
         one_player_2.draw(screen)
 

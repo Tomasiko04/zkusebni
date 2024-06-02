@@ -2,18 +2,31 @@
 
 >**STRUKTURA README souboru**
 >>Popis hry
+
 >>Co potřebujete aby jste kód spustili
+
 >>Ovládání hry
+
 >>Popis kódu
+
 >>>Základní nastavení hry
+
 >>>Logika
+
 >>>>Classy
+
 >>>>>Game
+
 >>>>>Player_1 (Player_2)
+
 >>>>>Bullet
+
 >>>>>RedStone (WhiteStone)
+
 >>>>Použití logiky
->>>>>Před hlavní herní smyčkou 
+
+>>>>>Před hlavní herní smyčkou
+
 >>>>>Hlavní cyklus
 
 

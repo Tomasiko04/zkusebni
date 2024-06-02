@@ -597,7 +597,11 @@ Uvedl jsem si zde za 1. kolize Player_1 a kolize Player_2 a za 2. poté kontrolu
             one_player_2.demage_by_bullet_sound.play()
 
 *for bullet in one_player_1.bullets:* ... prochází všechny střely, které hráč 1 vystřelil
+
 *if pygame.sprite.collide_rect(bullet, one_player_2):* ... kontroluje, zda se hranice střely překrývají s hranicemi hráče 2. 
+
 *bullet.kill()* ... odstraní střelu ze hry
+
 *one_player_2.lives -= 1*  ... sníží počet životů hráče 1 o jedna
+
 *one_player_2.demage_by_bullet_sound.play()* ... přehraje zvuk poškození, který signalizuje zásah

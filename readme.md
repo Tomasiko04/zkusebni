@@ -550,4 +550,14 @@ my_game je opět instance třídy Game
 Jak jsem výše zmiňoval mělo by zde být pouze volání class a jejich metod *(řádky v kódu 379 až 393)*, já jsem se pokusil do tohoto hlavního cyklu přidat i logiku, která by měla být použita výše v kódu 
 
 
-Celá hra funguje na základě smyčky *while*, ve která se neustále volají funkce a provádí další smyčky jako je např. smyčka *for*
+Celá hra funguje na základě cyklu *while*, ve která se neustále volají funkce a provádí další cyklay jako je např. cyklus *for*
+
+Jako základ hry se dájí považovat řádky v kódu 374 až 377
+
+
+    while lets_continue:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                lets_continue = False
+
+,kde pokud je *lets_continue* nasatveno na True hra probíhá a mezitím co hra běží, tak pomocí cyklu *for* se prochází veškeré *event* (jakákoli akce na herním poli) a pokud je tato akce rovna *QUIT* (kliknutí na křížek v pravém horním rohu pro zavření okna, ve kterém hra běží), herní okono se zavře, jelikož se *lets_continue = False* a hra se tím pádem ukončí  

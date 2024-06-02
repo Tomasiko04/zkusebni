@@ -13,25 +13,25 @@
 
 4.2 Logika
 
->>>>Classy
+4.2.1 Classy
 
->>>>>Game
+4.2.2 Game
 
->>>>>Player_1 (Player_2)
+4.2.3 Player_1 (Player_2)
 
->>>>>Bullet
+4.2.4 Bullet
 
->>>>>RedStone (WhiteStone)
+4.2.5 RedStone (WhiteStone)
 
->>>>Použití logiky
+4.3 Použití logiky
 
->>>>>Před hlavní herní smyčkou
+4.3.1 Před hlavní herní smyčkou
 
->>>>>Hlavní cyklus
+4.3.2 Hlavní cyklus
 
->>Odazy na (fonty, hudbu, zvuky, obrázky)
+5. Odazy na (fonty, hudbu, zvuky, obrázky)
 
->>ZÁVĚR
+6. ZÁVĚR
 
 
 >**Popis hry**

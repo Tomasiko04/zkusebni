@@ -549,3 +549,5 @@ my_game je opět instance třídy Game
 
 Jak jsem výše zmiňoval mělo by zde být pouze volání class a jejich metod *(řádky v kódu 379 až 393)*, já jsem se pokusil do tohoto hlavního cyklu přidat i logiku, která by měla být použita výše v kódu 
 
+
+Celá hra funguje na základě smyčky *while*, ve která se neustále volají funkce a provádí další smyčky jako je např. smyčka *for*

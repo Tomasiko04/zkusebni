@@ -1,17 +1,17 @@
 **Starwars**
 
 >**STRUKTURA README souboru**
->>Popis hry
+1. Popis hry
 
->>Co potřebujete aby jste kód spustili
+2. Co potřebujete aby jste kód spustili
 
->>Ovládání hry
+3. Ovládání hry
 
->>Popis kódu
+4. Popis kódu
 
->>>Základní nastavení hry
+4.1 Základní nastavení hry
 
->>>Logika
+4.2 Logika
 
 >>>>Classy
 
@@ -28,6 +28,10 @@
 >>>>>Před hlavní herní smyčkou
 
 >>>>>Hlavní cyklus
+
+>>Odazy na (fonty, hudbu, zvuky, obrázky)
+
+>>ZÁVĚR
 
 
 >**Popis hry**

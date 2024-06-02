@@ -1,5 +1,21 @@
 **Starwars**
 
+>**STRUKTURA README souboru**
+>>Popis hry
+>>Co potřebujete aby jste kód spustili
+>>Ovládání hry
+>>Popis kódu
+>>>Základní nastavení hry
+>>>Logika
+>>>>Classy
+>>>>>Game
+>>>>>Player_1 (Player_2)
+>>>>>Bullet
+>>>>>RedStone (WhiteStone)
+>>>>Použití logiky
+>>>>>Před hlavní herní smyčkou 
+>>>>>Hlavní cyklus
+
 
 >**Popis hry**
 
@@ -8,6 +24,13 @@ Tato hra je inspirována sci-fi filmy Star Wars. Jedná se o soubojovou arkádov
 (player_1 => červená vesmírná loď > imunní proti červeným meteoroidům
 
 player_2 => bílá vesmírná loď > imunní proti bílým meteoroidům)
+
+>**Co potřebujete aby jste kód spustili**
+
+>>Stáhnou si veškeré dokumenty k tomuto kódu (main.py, fonts, img, media)
+>>Pokud používáte pro spuštění kódu Visual Studio Code musíte si nainstalovat knihovnu pygame
+Jak na to? 
+Když otevřete vaše Visual Studio Code a otevřete si soubor main.py, který si stáhnete klikněte na Terminal > New Terminal > dole se vám otevře okno > napište do něj *pip install pygame* a stikněte klávesu ENETR > po chvíli se vám stáhne tato knihovna (pygame)
 
 
 >**Ovládání hry:**
@@ -25,7 +48,9 @@ Hráč 2:
 
     Střelba: Klávesa "C" (podle délky stisku klávesy se vystřelí určitý počet střel min.1 max.3)
 
->Popis kódu 
+>**Popis kódu** 
+
+>>Základní nastavení hry
 
 V této části, která bude značně nejdelší se Vám pokusím co nejlépe popsat a vysvětlit co daný kód umí.
 
@@ -493,7 +518,7 @@ Metoda, která se volá každým snímkem pro aktualizaci stavu kamene. U classy
 
 Pod tímto by mělo být tzv. použití logiky, kterou jsme si výše udělali a v kódu níže se bude jen volat nad a do hlavní herní smyčky. Jelikož je to moje první hra v pygame zkusil jsem přidat i nějakou herní logiku do a pod hlavní herní smyčku, jelikož určité internetové zdroje uvádí, že to není špatně psát herní logiku do části, kde se nachází hlavní herní smyčka, ale není to přehledné, proto se doporučuje využít objektově orientovaného programování s veškerou herní logiku psát mimo hlavní herní smyčku.
 
-        
+>**Použití logiky**      
 >Před hlavní herní smyčkou 
 
 >>Vytvoříme si dvě skupiny jednu pro hráče a druhou pro meteoroidy 
